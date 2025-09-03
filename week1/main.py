@@ -8,11 +8,11 @@ def normalize(x):
     x = (x - meanx) / stdx
     return x, meanx, stdx
 
-def gradient_decent(x, y, w, b, alpha = 0.001, loop = 100):
+def gradient_decent(x, y, w, b, alpha = 0.001, max_iterations = 10000):
 
     cost_history = []
     prev_cost = float('inf')
-    while(loop):
+    for _ in range(max_iterations):
         y_cap = w * x + b
         error = y_cap - y
 
